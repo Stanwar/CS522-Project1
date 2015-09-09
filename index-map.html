@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+    <script src="js/d3.js"></script>
+    <script type="text/javascript" src="js/ClassExtension.js"></script>
+    <script src="js/topojson.js"></script>
+    <script type="text/javascript" src="js/usApp.js"></script>
+</head>
+<body onload="init()">
+    <div name="map" id="map">
+        
+    </div>
+    <script type="text/javascript">
+        
+        var usApp; 
+
+        function init(){
+            console.log("This is init");
+            usApp = new usApp();
+            usApp.init();
+        }
+    </script>
+</body>
+</html>

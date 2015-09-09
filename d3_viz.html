@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Java Script Libraries -->
+	<script type="text/javascript" src="bootstrap.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script type="text/javascript" src="js/ClassExtension.js"></script>
+    <script src="js/topojson.js"></script>
+    <script src="js/d3_viz/main.js"></script>
+    <script src="js/d3_viz/usApp.js"></script>
+    <script type="text/javascript" src="data/us_boundaries.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	<!-- Data Files --> 
+	<script type="text/javascript" src="data/us_boundaries.js"></script>
+    <script type="text/javascript" src="js/usApp.js"></script>
+	<!-- CSS Files -->
+    <link href="css/d3_viz.css" rel="stylesheet"> 
+		<title>
+			d3 visualization of shootings in US
+		</title>
+	</head>
+	<body onload="init()">
+	    <div name="map" id="map">
+	        
+	    </div>
+	    <div name="controls" id="controls">
+
+	    </div>
+	    <script type="text/javascript">
+	        var data = {
+	        	'drop'	: 'MALE',
+	        	'drop2'	: 'FEMALE'
+	        }
+
+	        var dropdownlist = $('<select />');
+
+	        for (var val in data){
+	        	console.log(data[val]);
+	        	$('<option />', { 
+	        					value : val, 
+	        					text: data[val]}).append(dropdownlist);
+	        }
+
+	        dropdownlist.append('controls');
+
+	        var usApp; 
+	        //console.log(us_boundaries);
+	        function init(){	
+	            console.log("This is init");
+	            usApp = new usApp();
+	            usApp.init();
+	          //  usApp.startup("#map");
+
+	          usApp.makeCallback();
+	        }
+	    </script>
+	</body>
+	</body>
+</html>
